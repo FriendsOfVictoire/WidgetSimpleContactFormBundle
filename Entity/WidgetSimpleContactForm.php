@@ -30,7 +30,7 @@ class WidgetSimpleContactForm extends Widget
     /**
      * @var string
      *
-     * @ORM\Column(name="replyToEmail", type="string", length=255)
+     * @ORM\Column(name="replyToEmail", type="string", length=255, nullable=true)
      */
     protected $replyToEmail;
 
