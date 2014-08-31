@@ -18,6 +18,10 @@
         <source>widget_simplecontactform.form.recipientName.label</source>
         <target>Nom du destinataire</target>
       </trans-unit>
+      <trans-unit resname="widget_simplecontactform.form.senderEmail.label">
+        <source>widget_simplecontactform.form.senderEmail.label</source>
+        <target>Email à utiliser pour l'envoi</target>
+      </trans-unit>
       <trans-unit resname="widget_simplecontactform.form.recipientEmail.label">
         <source>widget_simplecontactform.form.recipientEmail.label</source>
         <target>Email du destinataire</target>

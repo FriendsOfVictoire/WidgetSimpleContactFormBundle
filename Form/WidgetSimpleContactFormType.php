@@ -44,7 +44,7 @@ class WidgetSimpleContactFormType extends WidgetType
                 'senderEmail',
                 null,
                 array(
-                    'label' => 'widget_simplecontactform.form.recipientEmail.label'
+                    'label' => 'widget_simplecontactform.form.senderEmail.label'
                 )
             );
             parent::buildForm($builder, $options);
