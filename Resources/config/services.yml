@@ -1,0 +1,18 @@
+services:
+    victoire_core.widget_simplecontactform_content_resolver:
+        class: Victoire\Widget\SimpleContactFormBundle\Resolver\WidgetSimpleContactFormResolver
+        arguments:
+            - "@form.factory"
+            - "@router"
+        parent: victoire_widget.base_widget_content_resolver
+        tags:
+            - { name: victoire_widget.widget_content_resolver, alias: SimpleContactForm }
+    #alias to the entity
+    victoire.widget.simplecontactform:
+        class: Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactForm
+
+    #alias to the form
+    victoire.widget.form.simplecontactform:
+        class: Victoire\Widget\SimpleContactFormBundle\Form\WidgetSimpleContactFormType
+        tags:
+            - { name: form.type , alias: victoire_widget_form_simplecontactform }

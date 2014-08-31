@@ -1,0 +1,11 @@
+victoire_core:
+    widgets:
+        SimpleContactForm:
+            class: "Victoire\\Widget\\SimpleContactFormBundle\\Entity\\WidgetSimpleContactForm"
+            name: SimpleContactForm
+            
+jms_translation:
+    configs:
+        victoire_simplecontactform_bundle:
+            dirs: ["@VictoireSimpleContactFormBundle"]
+            output_dir: "@VictoireSimpleContactFormBundle/Resources/translations"

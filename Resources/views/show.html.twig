@@ -1,0 +1,17 @@
+{% extends 'VictoireCoreBundle:Widget:show.html.twig' %}
+{% trans_default_domain "victoire" %}
+
+{% block content %}
+{{ form_start(form) }}
+    {{ form_errors(form) }}
+    {{ form_row(form.name) }}
+    {{ form_row(form.email) }}
+    {{ form_row(form.content) }}
+    <div class="form-group text-right">
+        <button type="submit" id="widget_simpleContactForm_message_type_send" class="btn btn btn-success">
+            {{ 'widget.simpleContactForm.messageType.send.label'|trans|raw }}
+        </button>
+    </div>
+{{ form_end(form) }}
+</form>
+{% endblock content %}
