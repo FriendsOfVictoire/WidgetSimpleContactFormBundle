@@ -7,14 +7,18 @@
     "license": "MIT",
     "authors": [
         {
-            "name": "Your name",
-            "email": "you@company.com"
+            "name": "Leny BERNARD",
+            "email": "leny@appventus.com"
         }
     ],
     "require": {
-        "php"                      : ">=5.3.3",
-        "symfony/framework-bundle" : "~2.3",
-        "victoire/victoire"        : "dev-master"    },
+        "php"                           : ">=5.3.3",
+        "symfony/framework-bundle"      : "~2.3",
+        "victoire/victoire"             : "dev-master",
+        "appventus/shortcuts-bundle"    : "dev-master",
+        "appventus/swiftmailerdbbundle" : "dev-master",
+        "appventus/spoolmailerbundle"   : "dev-master"
+    },
     "autoload": {
         "psr-0": { "Victoire\\Widget\\SimpleContactFormBundle": "" }
     },
