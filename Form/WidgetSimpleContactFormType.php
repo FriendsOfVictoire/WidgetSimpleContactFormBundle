@@ -18,13 +18,36 @@ class WidgetSimpleContactFormType extends WidgetType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('recipientName', null, array(
-            'label' => 'widget_simplecontactform.form.recipientName.label'
-        ));
-        $builder->add('recipientEmail', null, array(
-            'label' => 'widget_simplecontactform.form.recipientEmail.label'
-        ));
-                parent::buildForm($builder, $options);
+        $builder
+            ->add(
+                'subject',
+                null,
+                array(
+                    'label' => 'widget_simplecontactform.form.subject.label'
+                )
+            )
+            ->add(
+                'recipientName',
+                null,
+                array(
+                        'label' => 'widget_simplecontactform.form.recipientName.label'
+                    )
+                )
+            ->add(
+                'recipientEmail',
+                null,
+                array(
+                    'label' => 'widget_simplecontactform.form.recipientEmail.label'
+                )
+            )
+            ->add(
+                'senderEmail',
+                null,
+                array(
+                    'label' => 'widget_simplecontactform.form.recipientEmail.label'
+                )
+            );
+            parent::buildForm($builder, $options);
 
     }
 
