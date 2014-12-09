@@ -8,19 +8,59 @@
     <body>
       <trans-unit resname="widget.simplecontactform.new.action.label">
         <source>widget.simplecontactform.new.action.label</source>
-        <target state="new">SimpleContactForm</target>
+        <target>Contact Form</target>
       </trans-unit>
       <trans-unit resname="modal.form.widget.type.simplecontactform.label">
         <source>modal.form.widget.type.simplecontactform.label</source>
-        <target state="new">SimpleContactForm</target>
+        <target>Contact Form</target>
       </trans-unit>
       <trans-unit resname="widget_simplecontactform.form.recipientName.label">
         <source>widget_simplecontactform.form.recipientName.label</source>
-        <target state="new">recipientName</target>
+        <target>Recipient's name</target>
+      </trans-unit>
+      <trans-unit resname="widget_simplecontactform.form.senderEmail.label">
+        <source>widget_simplecontactform.form.senderEmail.label</source>
+        <target>Email to use for sending</target>
       </trans-unit>
       <trans-unit resname="widget_simplecontactform.form.recipientEmail.label">
         <source>widget_simplecontactform.form.recipientEmail.label</source>
-        <target state="new">recipientEmail</target>
+        <target>Recipient email</target>
+      </trans-unit>
+      <trans-unit resname="widget_simplecontactform.form.subject.label">
+        <source>widget_simplecontactform.form.subject.label</source>
+        <target>Mail Subject</target>
+      </trans-unit>
+      <trans-unit resname="widget.simpleContactForm.messageType.name.label">
+        <source>widget.simpleContactForm.messageType.name.label</source>
+        <target>Name</target>
+      </trans-unit>
+      <trans-unit resname="widget.simpleContactForm.messageType.email.label">
+        <source>widget.simpleContactForm.messageType.email.label</source>
+        <target>Email</target>
+      </trans-unit>
+      <trans-unit resname="widget.simpleContactForm.messageType.content.label">
+        <source>widget.simpleContactForm.messageType.content.label</source>
+        <target>Message</target>
+      </trans-unit>
+      <trans-unit resname="widget.simpleContactForm.messageType.name.placeholder">
+        <source>widget.simpleContactForm.messageType.name.placeholder</source>
+        <target>Enter your name</target>
+      </trans-unit>
+      <trans-unit resname="widget.simpleContactForm.messageType.email.placeholder">
+        <source>widget.simpleContactForm.messageType.email.placeholder</source>
+        <target>Enter your email</target>
+      </trans-unit>
+      <trans-unit resname="widget.simpleContactForm.messageType.content.placeholder">
+        <source>widget.simpleContactForm.messageType.content.placeholder</source>
+        <target>Enter your message</target>
+      </trans-unit>
+      <trans-unit resname="widget.simplecontactform.submit.notice.success">
+        <source>widget.simplecontactform.submit.notice.success</source>
+        <target><![CDATA[<div class="alert alert-info">Thank you, we have well received your message. We will respond as soon as possible.</div>]]></target>
+      </trans-unit>
+      <trans-unit resname="widget.simpleContactForm.messageType.send.label">
+        <source>widget.simpleContactForm.messageType.send.label</source>
+        <target><![CDATA[<i class="fa fa-paper-plane fa-flip-horizontal"></i> Send]]></target>
       </trans-unit>
     </body>
   </file>
