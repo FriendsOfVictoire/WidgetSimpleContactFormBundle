@@ -62,8 +62,7 @@ class WidgetSimpleContactFormMessageType extends AbstractType
         parent::setDefaultOptions($resolver);
 
         $resolver->setDefaults(array(
-            'data_class' => 'Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessage',
-            'translation_domain' => 'victoire'
+            'data_class' => 'Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessage'
         ));
     }
 

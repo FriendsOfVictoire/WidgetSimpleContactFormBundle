@@ -3,7 +3,7 @@ victoire_core:
         SimpleContactForm:
             class: "Victoire\\Widget\\SimpleContactFormBundle\\Entity\\WidgetSimpleContactForm"
             name: SimpleContactForm
-            
+
 jms_translation:
     configs:
         victoire_simplecontactform_bundle:
