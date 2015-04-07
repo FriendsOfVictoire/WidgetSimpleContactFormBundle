@@ -1,5 +1,5 @@
 {
-    "name": "victoire/simplecontactform-widget",
+    "name": "appventus/simplecontactform-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS SimpleContactForm widget",
     "keywords": ["cms", "victoire", "SimpleContactForm", "widget"],
