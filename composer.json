@@ -1,5 +1,5 @@
 {
-    "name": "appventus/simplecontactform-widget",
+    "name": "friendsofvictoire/simplecontactform-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS SimpleContactForm widget",
     "keywords": ["cms", "victoire", "SimpleContactForm", "widget"],
@@ -15,9 +15,9 @@
         "php"                           : ">=5.3.3",
         "symfony/framework-bundle"      : "~2.3",
         "victoire/victoire"             : "dev-master",
-        "appventus/shortcuts-bundle"    : "dev-master",
-        "appventus/swiftmailerdbbundle" : "dev-master",
-        "appventus/spoolmailerbundle"   : "dev-master"
+        "friendsofvictoire/shortcuts-bundle"    : "dev-master",
+        "friendsofvictoire/swiftmailerdbbundle" : "dev-master",
+        "friendsofvictoire/spoolmailerbundle"   : "dev-master"
     },
     "autoload": {
         "psr-0": { "Victoire\\Widget\\SimpleContactFormBundle": "" }
