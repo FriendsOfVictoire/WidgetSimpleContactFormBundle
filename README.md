@@ -1,7 +1,7 @@
-##Victoire Simple Contact Form Bundle
+##Victoire DCMS Simple Contact Form Bundle
 ============
 
-Need to add a simple contact formin your Victoire website ?
+Need to add a simple contact form in your Victoire website ?
 
 #Set Up Victoire
 
