@@ -2,19 +2,19 @@
     "name": "friendsofvictoire/simplecontactform-widget",
     "type": "symfony-bundle",
     "description": "Victoire DCMS SimpleContactForm widget",
-    "keywords": ["cms", "victoire", "SimpleContactForm", "widget"],
-    "homepage": "http://appventus.com",
+    "keywords": ["DCMS", "victoire", "SimpleContactForm", "widget", "FriendsofVictoire", "Dynamic", "CMS"],
+    "homepage": "http://victoire.io",
     "license": "MIT",
     "authors": [
         {
             "name": "Leny BERNARD",
-            "email": "leny@appventus.com"
+            "email": "leny@victoire.io"
         }
     ],
     "require": {
         "php"                           : ">=5.3.3",
         "symfony/framework-bundle"      : "~2.3",
-        "victoire/victoire"             : "dev-master",
+        "victoire/victoire"             : ">=1.0.0",
         "appventus/shortcuts-bundle"    : "dev-master",
         "appventus/swiftmailerdbbundle" : "dev-master",
         "appventus/spoolmailerbundle"   : "dev-master"
