@@ -36,6 +36,7 @@ class MessageController extends AwesomeController
         $entityClass = $this->container->getParameter('victoire_widget_simple_contact_form.entity_class');
         $message = new $entityClass();
         $message->setWidget($widget);
+        $widget->infoMessage = null;
         $form    = $this->createMessageForm($message);
 
         $form->handleRequest($this->getRequest());
@@ -45,13 +46,16 @@ class MessageController extends AwesomeController
             $em->persist($message);
             $em->flush();
 
-            $body = $this->renderView('VictoireWidgetSimpleContactFormBundle:Message:email.html.twig', array(
-                'recipient' => array(
-                    'name'  => $widget->getRecipientName(),
-                    'email' => $widget->getRecipientEmail()
-                ),
-                'message'   => $message,
-            ));
+            $body = $this->renderView(
+                'VictoireWidgetSimpleContactFormBundle:Message:email.html.twig',
+                array(
+                    'recipient' => array(
+                        'name' => $widget->getRecipientName(),
+                        'email' => $widget->getRecipientEmail()
+                    ),
+                    'message' => $message,
+                )
+            );
 
             $this->createAndQueueMail(
                 $widget->getSubject(),
@@ -62,33 +66,27 @@ class MessageController extends AwesomeController
                 $widget->getReplyToEmail()
             );
 
-            $this->container->get('appventus_alertifybundle.helper.alertifyhelper')->congrat(
-                $this->get('translator')->trans('widget.simplecontactform.submit.notice.success')
-            );
-
-            return $this->redirectReferer();
-
-        } else {
-            $showView = 'show'.ucfirst($widget->getTheme());
-            $templateName = $this->container->get('victoire_widget.widget_helper')->getTemplateName($showView, $widget);
-            $view = $widget->getView();
-            $reference = $this->get('victoire_core.view_cache_helper')->getReferenceByParameters(array('viewId' => $view->getId()));
-            $view->setReference($reference);
-
-            return new JsonResponse(
-                array(
-                    'success' => false,
-                    'html'    => $this->renderView(
-                        $templateName,
-                        array(
-                            'widget' => $widget,
-                            'form'   => $form->createView()
-                        )
-                    )
-                )
-            );
+            if (!$this->getRequest()->isXmlHttpRequest()) {
+                return $this->redirectReferer();
+            } else {
+                $widget->infoMessage = $this->get('translator')->trans(
+                    'widget.simplecontactform.submit.notice.success'
+                );
+            }
         }
+
+        $view = $widget->getView();
+        $reference = $this->get('victoire_core.view_cache_helper')->getReferenceByParameters(array('viewId' => $view->getId()));
+        $view->setReference($reference);
+
+        return new JsonResponse(
+            array(
+                'success' => false,
+                'html'    => $this->get('victoire_widget.widget_renderer')->render($widget, $view)
+            )
+        );
     }
+
 
     /**
      * Creates a form to create a SimpleContactForm message type.
