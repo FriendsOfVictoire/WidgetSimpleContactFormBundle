@@ -24,5 +24,13 @@ class VictoireWidgetSimpleContactFormExtension extends Extension
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
+
+        $container->setParameter(
+            'victoire_widget_simple_contact_form.form_class', $config['form_class']
+        );
+        $container->setParameter(
+            'victoire_widget_simple_contact_form.entity_class', $config['entity_class']
+        );
+
     }
 }

@@ -13,10 +13,12 @@ class WidgetSimpleContactFormResolver extends BaseWidgetContentResolver
 
     private $formFactory;
 
-    public function __construct(FormFactory $formFactory, Router $router)
+    public function __construct(FormFactory $formFactory, Router $router, $contactEntity, $contactForm)
     {
         $this->formFactory = $formFactory;
         $this->router = $router;
+        $this->contactEntity = $contactEntity;
+        $this->contactForm = $contactForm;
     }
 
     /**
@@ -29,12 +31,13 @@ class WidgetSimpleContactFormResolver extends BaseWidgetContentResolver
     public function getWidgetStaticContent(Widget $widget)
     {
         $parameters = parent::getWidgetStaticContent($widget);
-
-        $message = new WidgetSimpleContactFormMessage();
+        $contactEntity = $this->contactEntity;
+        $contactForm = $this->contactForm;
+        $message = new $contactEntity();
         $message->setWidget($widget);
 
         $form = $this->formFactory->create(
-            new WidgetSimpleContactFormMessageType(),
+            new $contactForm(),
             $message,
             array(
                 'action' => $this->router->generate(

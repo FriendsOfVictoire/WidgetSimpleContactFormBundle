@@ -10,7 +10,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Table("vic_widget_simplecontactform_message")
  * @ORM\Entity
  */
-class WidgetSimpleContactFormMessage
+class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageInterface
 {
     /**
      * @var integer

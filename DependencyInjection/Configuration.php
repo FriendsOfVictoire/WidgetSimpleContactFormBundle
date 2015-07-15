@@ -24,6 +24,15 @@ class Configuration implements ConfigurationInterface
         // configure your bundle. See the documentation linked above for
         // more information on that topic.
 
+
+        $rootNode
+            ->children()
+            ->scalarNode('entity_class')->defaultValue('Victoire\\Widget\\SimpleContactFormBundle\\Entity\\WidgetSimpleContactFormMessage')->end()
+            ->end()
+            ->children()
+            ->scalarNode('form_class')->defaultValue('Victoire\\Widget\\SimpleContactFormBundle\\Form\\WidgetSimpleContactFormMessageType')->end()
+            ->end();
+
         return $treeBuilder;
     }
 }

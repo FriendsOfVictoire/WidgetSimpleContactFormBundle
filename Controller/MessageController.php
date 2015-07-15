@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactForm;
 use Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessage;
+use Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessageInterface;
 use Victoire\Widget\SimpleContactFormBundle\Form\WidgetSimpleContactFormMessageType;
 
 /**
@@ -32,7 +33,8 @@ class MessageController extends AwesomeController
      */
     public function formSubmitAction(Request $request, WidgetSimpleContactForm $widget)
     {
-        $message = new WidgetSimpleContactFormMessage();
+        $entityClass = $this->container->getParameter('victoire_widget_simple_contact_form.entity_class');
+        $message = new $entityClass();
         $message->setWidget($widget);
         $form    = $this->createMessageForm($message);
 
@@ -60,11 +62,12 @@ class MessageController extends AwesomeController
                 $widget->getReplyToEmail()
             );
 
-            if ($this->getRequest()->isXmlHttpRequest()) {
-                return new Response($this->get('translator')->trans('widget.simplecontactform.submit.notice.success', array(), 'victoire'));
-            } else {
-                return $this->redirectReferer();
-            }
+            $this->container->get('appventus_alertifybundle.helper.alertifyhelper')->congrat(
+                $this->get('translator')->trans('widget.simplecontactform.submit.notice.success')
+            );
+
+            return $this->redirectReferer();
+
         } else {
             $showView = 'show'.ucfirst($widget->getTheme());
             $templateName = $this->container->get('victoire_widget.widget_helper')->getTemplateName($showView, $widget);
@@ -93,10 +96,11 @@ class MessageController extends AwesomeController
      *
      * @return \Symfony\Component\Form\Form The form
      */
-    private function createMessageForm(WidgetSimpleContactFormMessage $message)
+    private function createMessageForm(WidgetSimpleContactFormMessageInterface $message)
     {
+        $formClass = $this->container->getParameter('victoire_widget_simple_contact_form.form_class');
         $form = $this->createForm(
-            new WidgetSimpleContactFormMessageType(),
+            new $formClass(),
             $message,
             array(
                 'action' => $this->generateUrl('SimpleContactForm_Default_formSubmit', array('id' => $message->getWidget()->getId())),
