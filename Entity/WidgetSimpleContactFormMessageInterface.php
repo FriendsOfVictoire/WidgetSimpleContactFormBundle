@@ -2,6 +2,8 @@
 
 namespace Victoire\Widget\SimpleContactFormBundle\Entity;
 
+use Victoire\Bundle\WidgetBundle\Model\Widget;
+
 interface WidgetSimpleContactFormMessageInterface
 {
 
@@ -53,7 +55,7 @@ interface WidgetSimpleContactFormMessageInterface
     /**
      * Get widget
      *
-     * @return string
+     * @return Widget
      */
     public function getWidget();
 

@@ -24,7 +24,7 @@ class MessageController extends AwesomeController
 
     /**
      * Submit method
-     * @param SimpleContactFormWidget $widget
+     * @param WidgetSimpleContactForm $widget
      *
      * @Route("/submit/{id}", name="SimpleContactForm_Default_formSubmit")
      * @Template()
@@ -34,12 +34,13 @@ class MessageController extends AwesomeController
     public function formSubmitAction(Request $request, WidgetSimpleContactForm $widget)
     {
         $entityClass = $this->container->getParameter('victoire_widget_simple_contact_form.entity_class');
+        /** @var WidgetSimpleContactFormMessageInterface $message */
         $message = new $entityClass();
         $message->setWidget($widget);
         $widget->infoMessage = null;
         $form    = $this->createMessageForm($message);
 
-        $form->handleRequest($this->getRequest());
+        $form->handleRequest($request);
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
@@ -66,7 +67,7 @@ class MessageController extends AwesomeController
                 $widget->getReplyToEmail()
             );
 
-            if (!$this->getRequest()->isXmlHttpRequest()) {
+            if (!$request->isXmlHttpRequest()) {
                 return $this->redirectReferer();
             } else {
                 $widget->infoMessage = $this->get('translator')->trans(
