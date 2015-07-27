@@ -13,12 +13,13 @@ class WidgetSimpleContactFormResolver extends BaseWidgetContentResolver
 
     private $formFactory;
 
-    public function __construct(FormFactory $formFactory, Router $router, $contactEntity, $contactForm)
+    public function __construct(FormFactory $formFactory, Router $router, $contactEntity, $contactForm, $formActionRoute)
     {
         $this->formFactory = $formFactory;
         $this->router = $router;
         $this->contactEntity = $contactEntity;
         $this->contactForm = $contactForm;
+        $this->formActionRoute = $formActionRoute;
     }
 
     /**
@@ -41,7 +42,7 @@ class WidgetSimpleContactFormResolver extends BaseWidgetContentResolver
             $message,
             array(
                 'action' => $this->router->generate(
-                    'SimpleContactForm_Default_formSubmit',
+                    $this->formActionRoute,
                     array('id' => $message->getWidget()->getId())
                 ),
                 'method' => 'POST',

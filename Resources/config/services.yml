@@ -6,6 +6,7 @@ services:
             - "@router"
             - %victoire_widget_simple_contact_form.entity_class%
             - %victoire_widget_simple_contact_form.form_class%
+            - %victoire_widget_simple_contact_form.form_action_route%
         parent: victoire_widget.base_widget_content_resolver
         tags:
             - { name: victoire_widget.widget_content_resolver, alias: SimpleContactForm }

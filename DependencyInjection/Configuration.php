@@ -20,17 +20,15 @@ class Configuration implements ConfigurationInterface
         $treeBuilder = new TreeBuilder();
         $rootNode = $treeBuilder->root('victoire_widget_simple_contact_form');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
-
-
         $rootNode
             ->children()
             ->scalarNode('entity_class')->defaultValue('Victoire\\Widget\\SimpleContactFormBundle\\Entity\\WidgetSimpleContactFormMessage')->end()
             ->end()
             ->children()
             ->scalarNode('form_class')->defaultValue('Victoire\\Widget\\SimpleContactFormBundle\\Form\\WidgetSimpleContactFormMessageType')->end()
+            ->end()
+            ->children()
+            ->scalarNode('form_action_route')->defaultValue('SimpleContactForm_Default_formSubmit')->end()
             ->end();
 
         return $treeBuilder;
