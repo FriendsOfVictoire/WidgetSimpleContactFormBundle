@@ -31,6 +31,9 @@ class VictoireWidgetSimpleContactFormExtension extends Extension
         $container->setParameter(
             'victoire_widget_simple_contact_form.entity_class', $config['entity_class']
         );
+        $container->setParameter(
+            'victoire_widget_simple_contact_form.form_action_route', $config['form_action_route']
+        );
 
     }
 }
