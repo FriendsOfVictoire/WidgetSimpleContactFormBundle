@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" xmlns:jms="urn:jms:translation" version="1.2">
-  <file date="2013-11-27T18:15:06Z" source-language="en" target-language="en" datatype="plaintext" original="not.available">
+  <file date="2013-11-27T18:15:06Z" source-language="en" target-language="es" datatype="plaintext" original="not.available">
     <header>
       <tool tool-id="JMSTranslationBundle" tool-name="JMSTranslationBundle" tool-version="1.1.0-DEV"/>
       <note>The source node in most cases contains the sample message as written by the developer. If it looks like a dot-delimitted string such as "form.label.firstname", then the developer has not provided a default message.</note>
@@ -8,27 +8,27 @@
     <body>
       <trans-unit resname="widget.simplecontactform.new.action.label">
         <source>widget.simplecontactform.new.action.label</source>
-        <target>Contact Form</target>
+        <target>Formulario de contacto</target>
       </trans-unit>
       <trans-unit resname="modal.form.widget.type.simplecontactform.label">
         <source>modal.form.widget.type.simplecontactform.label</source>
-        <target>Contact Form</target>
+        <target>Formulario de contacto</target>
       </trans-unit>
       <trans-unit resname="widget_simplecontactform.form.recipientName.label">
         <source>widget_simplecontactform.form.recipientName.label</source>
-        <target>Recipient's name</target>
+        <target>Nombre del receptor</target>
       </trans-unit>
       <trans-unit resname="widget_simplecontactform.form.senderEmail.label">
         <source>widget_simplecontactform.form.senderEmail.label</source>
-        <target>From email</target>
+        <target>Mail del remitente</target>
       </trans-unit>
       <trans-unit resname="widget_simplecontactform.form.recipientEmail.label">
         <source>widget_simplecontactform.form.recipientEmail.label</source>
-        <target>Recipient email</target>
+        <target>Mail del receptor</target>
       </trans-unit>
       <trans-unit resname="widget_simplecontactform.form.subject.label">
         <source>widget_simplecontactform.form.subject.label</source>
-        <target>Mail Subject</target>
+        <target>Asunto del mail</target>
       </trans-unit>
     </body>
   </file>
