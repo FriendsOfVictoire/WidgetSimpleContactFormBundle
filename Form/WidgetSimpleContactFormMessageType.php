@@ -7,45 +7,46 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
- * Widget SimpleContactForm Message Type
+ * Widget SimpleContactForm Message Type.
  */
 class WidgetSimpleContactFormMessageType extends AbstractType
 {
-
     /**
-     * Build form function
+     * Build form function.
+     *
      * @param FormBuilderInterface $builder
      * @param array                $options
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('name', null, array(
-                    'label' => "widget.simpleContactForm.messageType.name.label",
-                    'attr'  => array(
-                        'placeholder' => "widget.simpleContactForm.messageType.name.placeholder"
-                    )
-                )
+            ->add('name', null, [
+                    'label' => 'widget.simpleContactForm.messageType.name.label',
+                    'attr'  => [
+                        'placeholder' => 'widget.simpleContactForm.messageType.name.placeholder',
+                    ],
+                ]
             )
-            ->add('email', null, array(
-                    'label' => "widget.simpleContactForm.messageType.email.label",
-                    'attr'  => array(
-                        'placeholder' => "widget.simpleContactForm.messageType.email.placeholder"
-                    )
-                )
+            ->add('email', null, [
+                    'label' => 'widget.simpleContactForm.messageType.email.label',
+                    'attr'  => [
+                        'placeholder' => 'widget.simpleContactForm.messageType.email.placeholder',
+                    ],
+                ]
             )
-            ->add('content', 'textarea', array(
-                    'label' => "widget.simpleContactForm.messageType.content.label",
-                    'attr'  => array(
-                        'placeholder' => "widget.simpleContactForm.messageType.content.placeholder",
-                        'rows' => 10
-                    )
-                )
+            ->add('content', 'textarea', [
+                    'label' => 'widget.simpleContactForm.messageType.content.label',
+                    'attr'  => [
+                        'placeholder' => 'widget.simpleContactForm.messageType.content.placeholder',
+                        'rows'        => 10,
+                    ],
+                ]
             );
     }
 
     /**
-     * GetName function
+     * GetName function.
+     *
      * @return string Name
      */
     public function getName()
@@ -54,16 +55,16 @@ class WidgetSimpleContactFormMessageType extends AbstractType
     }
 
     /**
-     * bind form to WidgetSimpleContactFormMessage entity
+     * bind form to WidgetSimpleContactFormMessage entity.
+     *
      * @param OptionsResolverInterface $resolver
      */
     public function setDefaultOptions(OptionsResolverInterface $resolver)
     {
         parent::setDefaultOptions($resolver);
 
-        $resolver->setDefaults(array(
-            'data_class' => 'Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessage'
-        ));
+        $resolver->setDefaults([
+            'data_class' => 'Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessage',
+        ]);
     }
-
 }

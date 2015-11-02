@@ -6,16 +6,16 @@ use Victoire\Bundle\WidgetBundle\Model\Widget;
 
 interface WidgetSimpleContactFormMessageInterface
 {
-
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
     public function getName();
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
      *
      * @return $this
@@ -23,14 +23,15 @@ interface WidgetSimpleContactFormMessageInterface
     public function setName($name);
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
     public function getEmail();
 
     /**
-     * Set email
+     * Set email.
+     *
      * @param string $email
      *
      * @return $this
@@ -38,14 +39,15 @@ interface WidgetSimpleContactFormMessageInterface
     public function setEmail($email);
 
     /**
-     * Get content
+     * Get content.
      *
      * @return string
      */
     public function getContent();
 
     /**
-     * Set content
+     * Set content.
+     *
      * @param string $content
      *
      * @return $this
@@ -53,14 +55,15 @@ interface WidgetSimpleContactFormMessageInterface
     public function setContent($content);
 
     /**
-     * Get widget
+     * Get widget.
      *
      * @return Widget
      */
     public function getWidget();
 
     /**
-     * Set widget
+     * Set widget.
+     *
      * @param string $widget
      *
      * @return $this

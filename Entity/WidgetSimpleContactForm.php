@@ -1,18 +1,18 @@
 <?php
+
 namespace Victoire\Widget\SimpleContactFormBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Victoire\Bundle\WidgetBundle\Entity\Widget;
 
 /**
- * WidgetSimpleContactForm
+ * WidgetSimpleContactForm.
  *
  * @ORM\Table("vic_widget_simplecontactform")
  * @ORM\Entity
  */
 class WidgetSimpleContactForm extends Widget
 {
-
     /**
      * @var string
      *
@@ -59,9 +59,9 @@ class WidgetSimpleContactForm extends Widget
     /**
      * To String function
      * Used in render choices type (Especially in VictoireWidgetRenderBundle)
-     * //TODO Check the generated value and make it more consistent
+     * //TODO Check the generated value and make it more consistent.
      *
-     * @return String
+     * @return string
      */
     public function __toString()
     {
@@ -69,7 +69,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Set recipientName
+     * Set recipientName.
      *
      * @param string $recipientName
      */
@@ -81,7 +81,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Get recipientName
+     * Get recipientName.
      *
      * @return string
      */
@@ -91,7 +91,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Set recipientEmail
+     * Set recipientEmail.
      *
      * @param string $recipientEmail
      */
@@ -103,7 +103,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Get recipientEmail
+     * Get recipientEmail.
      *
      * @return string
      */
@@ -113,7 +113,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Set replyToEmail
+     * Set replyToEmail.
      *
      * @param string $replyToEmail
      */
@@ -125,7 +125,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Get replyToEmail
+     * Get replyToEmail.
      *
      * @return string
      */
@@ -135,7 +135,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Set senderEmail
+     * Set senderEmail.
      *
      * @param string $senderEmail
      */
@@ -147,7 +147,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Get senderEmail
+     * Get senderEmail.
      *
      * @return string
      */
@@ -157,7 +157,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Get subject
+     * Get subject.
      *
      * @return string
      */
@@ -167,9 +167,10 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Set subject
+     * Set subject.
      *
-     * @param  string $subject
+     * @param string $subject
+     *
      * @return $this
      */
     public function setSubject($subject)
@@ -180,7 +181,7 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Get messages
+     * Get messages.
      *
      * @return string
      */
@@ -190,9 +191,10 @@ class WidgetSimpleContactForm extends Widget
     }
 
     /**
-     * Set messages
+     * Set messages.
      *
-     * @param  string $messages
+     * @param string $messages
+     *
      * @return $this
      */
     public function setMessages($messages)
@@ -201,5 +203,4 @@ class WidgetSimpleContactForm extends Widget
 
         return $this;
     }
-
 }

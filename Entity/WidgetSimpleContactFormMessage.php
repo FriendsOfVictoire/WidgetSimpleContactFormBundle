@@ -6,14 +6,15 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * When some visitor use the contact form, it is stored with this entity
+ * When some visitor use the contact form, it is stored with this entity.
+ *
  * @ORM\Table("vic_widget_simplecontactform_message")
  * @ORM\Entity
  */
 class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageInterface
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -54,7 +55,7 @@ class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageIn
     public $widget;
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -64,7 +65,8 @@ class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageIn
     }
 
     /**
-     * Set name
+     * Set name.
+     *
      * @param string $name
      *
      * @return $this
@@ -77,7 +79,7 @@ class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageIn
     }
 
     /**
-     * Get email
+     * Get email.
      *
      * @return string
      */
@@ -87,7 +89,8 @@ class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageIn
     }
 
     /**
-     * Set email
+     * Set email.
+     *
      * @param string $email
      *
      * @return $this
@@ -100,7 +103,7 @@ class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageIn
     }
 
     /**
-     * Get content
+     * Get content.
      *
      * @return string
      */
@@ -110,7 +113,8 @@ class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageIn
     }
 
     /**
-     * Set content
+     * Set content.
+     *
      * @param string $content
      *
      * @return $this
@@ -123,7 +127,7 @@ class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageIn
     }
 
     /**
-     * Get widget
+     * Get widget.
      *
      * @return string
      */
@@ -133,7 +137,8 @@ class WidgetSimpleContactFormMessage implements WidgetSimpleContactFormMessageIn
     }
 
     /**
-     * Set widget
+     * Set widget.
+     *
      * @param string $widget
      *
      * @return $this

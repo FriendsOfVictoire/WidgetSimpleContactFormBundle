@@ -10,25 +10,24 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactForm;
-use Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessage;
 use Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessageInterface;
-use Victoire\Widget\SimpleContactFormBundle\Form\WidgetSimpleContactFormMessageType;
 
 /**
- * Simple contact form default controller
+ * Simple contact form default controller.
  *
  * @Route("/simpleContactForm/message")
  */
 class MessageController extends AwesomeController
 {
-
     /**
-     * Submit method
+     * Submit method.
+     *
      * @param WidgetSimpleContactForm $widget
      *
      * @Route("/submit/{id}", name="SimpleContactForm_Default_formSubmit")
      * @Template()
      * @Method({"POST"})
+     *
      * @return Response
      */
     public function formSubmitAction(Request $request, WidgetSimpleContactForm $widget)
@@ -38,7 +37,7 @@ class MessageController extends AwesomeController
         $message = new $entityClass();
         $message->setWidget($widget);
         $widget->infoMessage = null;
-        $form    = $this->createMessageForm($message);
+        $form = $this->createMessageForm($message);
 
         $form->handleRequest($request);
 
@@ -49,13 +48,13 @@ class MessageController extends AwesomeController
 
             $body = $this->renderView(
                 'VictoireWidgetSimpleContactFormBundle:Message:email.html.twig',
-                array(
-                    'recipient' => array(
-                        'name' => $widget->getRecipientName(),
-                        'email' => $widget->getRecipientEmail()
-                    ),
+                [
+                    'recipient' => [
+                        'name'  => $widget->getRecipientName(),
+                        'email' => $widget->getRecipientEmail(),
+                    ],
                     'message' => $message,
-                )
+                ]
             );
 
             $this->createAndQueueMail(
@@ -77,20 +76,20 @@ class MessageController extends AwesomeController
         }
 
         $view = $widget->getView();
-        $reference = $this->get('victoire_core.view_cache_helper')->getReferenceByParameters(array('viewId' => $view->getId()));
+        $reference = $this->get('victoire_core.view_cache_helper')->getReferenceByParameters(['viewId' => $view->getId()]);
         $view->setReference($reference);
 
         return new JsonResponse(
-            array(
+            [
                 'success' => false,
-                'html'    => $this->get('victoire_widget.widget_renderer')->render($widget, $view)
-            )
+                'html'    => $this->get('victoire_widget.widget_renderer')->render($widget, $view),
+            ]
         );
     }
 
-
     /**
      * Creates a form to create a SimpleContactForm message type.
+     *
      * @param SimpleContactForm $message
      *
      * @return \Symfony\Component\Form\Form The form
@@ -101,14 +100,14 @@ class MessageController extends AwesomeController
         $form = $this->createForm(
             new $formClass(),
             $message,
-            array(
-                'action' => $this->generateUrl('SimpleContactForm_Default_formSubmit', array('id' => $message->getWidget()->getId())),
+            [
+                'action' => $this->generateUrl('SimpleContactForm_Default_formSubmit', ['id' => $message->getWidget()->getId()]),
                 'method' => 'POST',
-                'attr' => array(
-                    'data-toggle'  => "ajax",
-                    'data-update' => "vic-widget-".$message->getWidget()->getId()."-container"
-                ),
-            )
+                'attr'   => [
+                    'data-toggle'  => 'ajax',
+                    'data-update'  => 'vic-widget-'.$message->getWidget()->getId().'-container',
+                ],
+            ]
         );
 
         return $form;
