@@ -76,7 +76,7 @@ class MessageController extends AwesomeController
         }
 
         $view = $widget->getView();
-        $reference = $this->get('victoire_core.view_cache_helper')->getReferenceByParameters(['viewId' => $view->getId()]);
+        $reference = $this->get('victoire_view_reference.cache.repository')->getOneReferenceByParameters(['viewId' => $view->getId()]);
         $view->setReference($reference);
 
         return new JsonResponse(
