@@ -20,13 +20,13 @@
             "email": "leny@victoire.io"
         }
     ],
-    "require"          : {
-        "php"                          : ">=5.3.3",
-        "symfony/framework-bundle"     : "~2.3",
-        "victoire/victoire"            : ">=1.3.6",
-        "appventus/shortcuts-bundle"   : "dev-master",
-        "appventus/swiftmailerdbbundle": "dev-master",
-        "appventus/spoolmailerbundle"  : "dev-master"
+    "require": {
+        "php"                           : ">=5.3.3",
+        "symfony/framework-bundle"      : "~2.3",
+        "victoire/victoire"             : "~1.3",
+        "appventus/shortcuts-bundle"    : "dev-master",
+        "appventus/swiftmailerdbbundle" : "dev-master",
+        "appventus/spoolmailerbundle"   : "dev-master"
     },
     "autoload"         : {
         "psr-0": {"Victoire\\Widget\\SimpleContactFormBundle": ""}
