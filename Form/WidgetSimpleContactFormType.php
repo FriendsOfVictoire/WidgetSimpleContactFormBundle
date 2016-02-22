@@ -3,7 +3,7 @@
 namespace Victoire\Widget\SimpleContactFormBundle\Form;
 
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Victoire\Bundle\CoreBundle\Form\WidgetType;
 
 /**
@@ -21,31 +21,19 @@ class WidgetSimpleContactFormType extends WidgetType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add(
-                'subject',
-                null,
-                [
+            ->add('subject', null, [
                     'label' => 'widget_simplecontactform.form.subject.label',
                 ]
             )
-            ->add(
-                'recipientName',
-                null,
-                [
-                        'label' => 'widget_simplecontactform.form.recipientName.label',
-                    ]
-                )
-            ->add(
-                'recipientEmail',
-                null,
-                [
+            ->add('recipientName', null, [
+                    'label' => 'widget_simplecontactform.form.recipientName.label',
+                ]
+            )
+            ->add('recipientEmail', null, [
                     'label' => 'widget_simplecontactform.form.recipientEmail.label',
                 ]
             )
-            ->add(
-                'senderEmail',
-                null,
-                [
+            ->add('senderEmail', null, [
                     'label' => 'widget_simplecontactform.form.senderEmail.label',
                 ]
             );
@@ -53,28 +41,16 @@ class WidgetSimpleContactFormType extends WidgetType
     }
 
     /**
-     * bind form to WidgetSimpleContactForm entity.
-     *
-     * @param OptionsResolverInterface $resolver
+     * {@inheritdoc}
      */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
+    public function configureOptions(OptionsResolver $resolver)
     {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class'         => 'Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactForm',
             'widget'             => 'SimpleContactForm',
             'translation_domain' => 'victoire',
         ]);
-    }
-
-    /**
-     * get form name.
-     *
-     * @return string The form name
-     */
-    public function getName()
-    {
-        return 'victoire_widget_form_simplecontactform';
     }
 }

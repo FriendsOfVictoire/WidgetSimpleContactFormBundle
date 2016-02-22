@@ -3,8 +3,10 @@
 namespace Victoire\Widget\SimpleContactFormBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
-use Symfony\Component\OptionsResolver\OptionsResolverInterface;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 
 /**
  * Widget SimpleContactForm Message Type.
@@ -27,14 +29,14 @@ class WidgetSimpleContactFormMessageType extends AbstractType
                     ],
                 ]
             )
-            ->add('email', null, [
+            ->add('email', EmailType::class, [
                     'label' => 'widget.simpleContactForm.messageType.email.label',
                     'attr'  => [
                         'placeholder' => 'widget.simpleContactForm.messageType.email.placeholder',
                     ],
                 ]
             )
-            ->add('content', 'textarea', [
+            ->add('content', TextareaType::class, [
                     'label' => 'widget.simpleContactForm.messageType.content.label',
                     'attr'  => [
                         'placeholder' => 'widget.simpleContactForm.messageType.content.placeholder',
@@ -45,23 +47,11 @@ class WidgetSimpleContactFormMessageType extends AbstractType
     }
 
     /**
-     * GetName function.
-     *
-     * @return string Name
+     * {@inheritdoc}
      */
-    public function getName()
+    public function configureOptions(OptionsResolver $resolver)
     {
-        return 'widget_simpleContactForm_message_type';
-    }
-
-    /**
-     * bind form to WidgetSimpleContactFormMessage entity.
-     *
-     * @param OptionsResolverInterface $resolver
-     */
-    public function setDefaultOptions(OptionsResolverInterface $resolver)
-    {
-        parent::setDefaultOptions($resolver);
+        parent::configureOptions($resolver);
 
         $resolver->setDefaults([
             'data_class' => 'Victoire\Widget\SimpleContactFormBundle\Entity\WidgetSimpleContactFormMessage',

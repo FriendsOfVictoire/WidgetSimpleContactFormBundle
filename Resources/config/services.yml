@@ -18,4 +18,4 @@ services:
     victoire.widget.form.simplecontactform:
         class: Victoire\Widget\SimpleContactFormBundle\Form\WidgetSimpleContactFormType
         tags:
-            - { name: form.type , alias: victoire_widget_form_simplecontactform }
+            - { name: form.type }
