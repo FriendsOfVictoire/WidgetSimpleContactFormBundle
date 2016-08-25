@@ -1,20 +1,16 @@
 {
-    "name"             : "friendsofvictoire/simplecontactform-widget",
-    "type"             : "symfony-bundle",
-    "description"      : "Victoire DCMS SimpleContactForm widget",
-    "keywords"         : [
+    "name": "friendsofvictoire/simplecontactform-widget",
+    "type": "symfony-bundle",
+    "description": "Victoire DCMS SimpleContactForm widget",
+    "keywords": [
         "DCMS",
         "victoire",
-        "SimpleContactForm",
-        "widget",
-        "FriendsofVictoire",
-        "FoV",
-        "Dynamic",
-        "CMS"
+        "contact",
+        "widget"
     ],
-    "homepage"         : "http://victoire.io",
-    "license"          : "MIT",
-    "authors"          : [
+    "homepage": "http://victoire.io",
+    "license": "MIT",
+    "authors": [
         {
             "name" : "Leny BERNARD",
             "email": "leny@victoire.io"
@@ -28,7 +24,7 @@
         "appventus/swiftmailerdbbundle" : "dev-master",
         "appventus/spoolmailerbundle": "dev-master"
     },
-    "autoload"         : {
+    "autoload": {
         "psr-0": {"Victoire\\Widget\\SimpleContactFormBundle": ""}
     },
     "target-dir": "Victoire/Widget/SimpleContactFormBundle"
